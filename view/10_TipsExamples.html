@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<link rel=stylesheet href="../css/jquery.mobile.css" />
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.mobile.js"></script>
+</head>
+<body>
+<div data-role="page" id="main">
+	<div data-role="header">
+		<h1>1 Header</h1>
+		<a href="#two" data-role="button">2</a>
+	</div>
+	<div data-role="content">
+		<p>A full basic page</p>
+		<p>가장 기본이 되는 페이지의 Full mark-up 이다. 간단한 Single Page를 표현하려면 여기있는 코드가 가장 기본이 되는 코드이다.</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="two">
+	<div data-role="header">
+		<h1>2 Header</h1>
+		<a href="#main" data-role="button">1</a>
+		<a href="#three" data-role="button">3</a>
+	</div>
+	<div data-role="content">
+		<p>2. Where to add traditional jQuery calls</p>
+		<p>처음 시작할 때 모바일 플러그인이 trigger 되기 전에 뭔가 해야되는 것이 있을 경우,
+		기본 jQuery를 사용할 경우...
+		그럴 경우 모바일 Plug-In을 참조하기 이전에 jQuery call을 넣어 주면 된다.
+		그러면 jQuery Mobile 보다 jQuery가 먼저 실행된다.</p>
+		<p>
+		&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"&gt;
+		$(document).ready(function() { <br/>
+			// Your jQuery commands go here before the mobile reference<br/> 
+		});
+		&lt;script type="text/javascript" src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"&gt;
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="three">
+	<div data-role="header">
+		<h1>3 Header</h1>
+		<a href="#two" data-role="button">2</a>
+		<a href="#four" data-role="button">4</a>
+	</div>
+	<div data-role="content">
+		<p>3. Disable AJAX navigation for all links at once</p>
+		<p>AJAX navigation은 아주 멋지죠. 그런데 가끔 이 기능을 disable 시킬 필요가 있을 때가 있어요.<br/>
+		이럴 때 AJAX navigation을 사용하지 말도록 할 수 가 있습니다.<br/>
+		헤더부분에서 jQuery mobile library를 reference 한 후 에 아래 코딩을 추가해 보세요.<br/>
+		jQuery mobile library가 먼저 load 되 있어야 합니다. 그러니까 반드시 그 다음에 넣어야 합니다.</p>
+		<p>
+		&lt;script&gt;<br/>
+		$(document).ready(function() {<br/> 
+			// disable ajax nav $.mobile.ajaxLinksEnabled = false;<br/> 
+		}); &lt;/script&gt;<br/>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="four">
+	<div data-role="header">
+		<h1>4 Header</h1>
+		<a href="#three" data-role="button">3</a>
+		<a href="#five" data-role="button">5</a>
+	</div>
+	<div data-role="content">
+		<p>4. Stop some key items from being truncated</p>
+		<p>jQuery Mobile library의 기능 중 하나는 내용이 길면 알아서 UI element에 맞춰서 잘라준다는 겁니다.<br/>
+		그런데 두가지 경우에 이런 기능이 좀 불편해 질 때가 있더라구요.<br/>
+		첫번째는 full text를 보고 싶을 때구요.<br/>
+		두번째는 footer text 입니다.<br/>
+		이런것들에서 내용이 잘려서 "..."로 표시되면 좀 그렇죠.<br/>
+		이 두가지 경우에는 디폴트로 아래와 같은 CSS를 오버라이드 해 주세요.<br/>
+		For list items:<br/>
+		body .ui-li .ui-li-desc {<br/>
+			white-space: normal;<br/>
+		}<br/>
+		For footer content:<br/>
+		body .ui-footer .ui-title {<br/>
+			white-space: normal;<br/>
+		}<br/>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="five">
+	<div data-role="header">
+		<h1>5 Header</h1>
+		<a href="#four" data-role="button">4</a>
+		<a href="#six" data-role="button">6</a>
+	</div>
+	<div data-role="content">
+		<p>5. Use media queries to target devices</p>
+		<p>j작업을 하면서 구현해야 할 것 중에 하나가 각 device 별로 어떻게 따로따로 CSS를 구현하느냐 입니다.<br/>
+		예를 들어 아이패드에서는 2개의 컬럼 레이아웃을 쓰고 싶고 스마트폰에서는 한개의 컬럼 레이아웃을 써야 할 때가 있잖아요.<br/>
+		이것을 구현하려면 media queries 를 사용하시면 됩니다.<br/>
+		이 미디어쿼리를 이용해서 각 스크린 사이즈 별 CSS를 구현하실 수 있습니다.<br/>
+		아래 링크를 보시면 두개의 아주 훌륭한 아티클이 있습니다. 참조하세요.<br/>
+		<a href="http://css-tricks.com/css-media-queries/" data-ajax="false">“CSS Media Queries and Using Available Space,” CSS-Tricks;</a> <br/>
+		<a href="http://stuffandnonsense.co.uk/projects/320andup/" data-ajax="false">Hardboiled CSS3 Media Queries,” Stuff and Nonsense.</a><br/>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+<div data-role="page" id="six">
+	<div data-role="header">
+		<h1>6 Header</h1>
+		<a href="#five" data-role="button">5</a>
+		<a href="#seven" data-role="button">7</a>
+	</div>
+	<div data-role="content">
+		<p>6. Target platforms with jQuery</p>
+		<p>특정 디바이스에 특정 CSS를 실행해야 할 때가 있죠.<br/>
+		그리고 오직 jQuery 만 사용해야 될 떄가 있습니다.<br/>
+		여기 some code from Snipplr에서 가져온 코드가 있는데요.<br/>
+		jQuery 로 유저 디바이스에 맞게 jQuery의 segment portion들을 쉽게 사용할 수 있도록 하는 방법입니다.<br/>
+
+		var deviceAgent = navigator.userAgent.toLowerCase();<br/>
+		var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);<br/>
+		if(agentID.indexOf("iphone")&gt;=0){<br/>
+			alert("iphone");<br/>
+		}<br/>
+		if(agentID.indexOf("ipod")&gt;=0){<br/>
+			alert("ipod");<br/>
+		}<br/>
+		if(agentID.indexOf("ipad")&gt;=0){<br/>
+			alert("ipad");<br/>
+		}<br/>
+		if(agentID.indexOf("android")&gt;=0){<br/>
+			alert("android");<br/>
+		}<br/>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="seven">
+	<div data-role="header">
+		<h1>7 Header</h1>
+		<a href="#six" data-role="button">6</a>
+		<a href="#eight" data-role="button">8</a>
+	</div>
+	<div data-role="content">
+		<p>7. Use full paths for the targets of form action attributes</p>
+		<p>
+		One quirk of the library seems to be its difficulty in finding target pages to post forms to… that is,<br/> 
+		unless you use the full path from the root of the website.<br/>
+		For example, I’ve found that this form tag never finds its target:<br/>
+		&lt;form action=" form-handler.php " method="get"&gt;<br/>
+		Whereas a full path like this works as expected:<br/>
+		&lt;form action="/current-directory/form-handler.php" method="get"&gt;<br/>
+		Also, be sure that the results from the form handler produce a full, valid jQuery mobile page, as shown in tip #1.<br/>
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="eight">
+	<div data-role="header">
+		<h1>8 Header</h1>
+		<a href="#seven" data-role="button">7</a>
+		<a href="#nine" data-role="button">9</a>
+	</div>
+	<div data-role="content">
+		<p>8. Create pop-up dialogs</p>
+		<p>
+		jQuery Mobile library의 좋은 기능 중 하나는 built-in pop-up하고 dialog box 기능이죠.<br/>
+		정말 간단하고 쉽게 이용할 수 있습니다. 기본적으로 data-rel="dialog" 를 붙여주면 됩니다.<br/>
+		두가지만 기억하세요. 첫번째로 target page는 반드시 full-blown jQuery mobile page라야 합니다.<br/>
+		두번째는 제대로 작동을 하도록 하려면은 full separate page라야 한다는 겁니다.<br/>
+		
+		<a href="#six" data-rel="dialog">Pop up!</a> 
+		</p>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="nine">
+	<div data-role="header">
+		<h1>9 Header</h1>
+		<a href="#eight" data-role="button">8</a>
+		<a href="#ten" data-role="button">10</a>
+	</div>
+	<div data-role="content">
+		<p>9. A “Cancel” + “Save” button combo</p>
+		<p>
+		두개의 버튼을 나란히 넣어야 할 때가 있죠? 이럴 경우는 fieldset tag를 쓰시면 편리합니다.<br/>
+		그리고 두개의 버튼을 다른 theme으로 표현할 수도 있습니다.<br/>
+		이 코드는 여기에 있는겁니다. 자주 이용하기 때문에 저같은 경우는 따로 보관해 뒀다가 쓰고 있습니다.<br/>
+		</p>
+		
+		<fieldset>
+			<div><button type="submit" data-theme="c">Cancel</button></div>
+			<div><button type="submit" data-theme="b">Submit</button></div>
+		</fieldset>
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+<div data-role="page" id="ten">
+	<div data-role="header">
+		<h1>10 Header</h1>
+		<a href="#nine" data-role="button">9</a>
+	</div>
+	<div data-role="content">
+		<p>10. Create a column structure on your own</p>
+		<p>
+		다양한 디바이스를 위한 single page structure에 대해 <br/>
+		위에서 미디어 쿼리와 columns를 사용하는 방법을 위에서 알려 드렸죠.<br/>
+		다행히 웹 개발자들이 컬럼들을 어떻게 사용하는지에 대해 이전에 많이 만들어 놨었습니다.<br/>
+		이 기능들을 미디어쿼리와 같이 섞어쓰면 편하겠죠.<br/>
+		우리는 다양한 스크린사이즈에 맞게 다양한 structure를 쉽게 setup 할 수 있습니다.<br/>
+		<a href="http://www.positioniseverything.net/articles/onetruelayout/anyorder" data-ajax="false">
+		Position Is Everything</a> 은 이것을 하는데 가장 쉬운 방법을 알려 줍니다.<br/>
+		</p>
+		
+	</div>
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
+
+</body>
+</html>
