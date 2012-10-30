@@ -9,6 +9,7 @@
 *
 */
 
+//FIXME : ---------- build/wrap.start (start) ----------// 
 (
 	function ( root, doc, factory ) {
 		if ( typeof define === "function" && define.amd ) {
@@ -24,6 +25,8 @@
 		}
 	}
 	(this, document, function ( jQuery, window, document, undefined ) {
+//FIXME : ---------- build/wrap.start (end) ----------//
+//FIXME : ---------- js/jquery.mobile.core.js (start) ----------//
 		(function( $, window, undefined ) {
 			var nsNormalizeDict = {};
 
@@ -349,7 +352,10 @@
 			return $.find( expr, null, null, [ node ] ).length > 0;
 		};
 	})( jQuery, this );
-	
+		
+//FIXME : ---------- js/jquery.mobile.core.js (end) ----------//	
+
+//FIXME : ---------- js/jquery.ui.widget.js (start)  ----------//
 	
 	/*!
 	 * jQuery UI Widget v1.9.0-beta.1
@@ -852,6 +858,10 @@
 	}
 	
 	})( jQuery );
+
+	
+//FIXME : ---------- js/jquery.ui.widget.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.widget.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -917,7 +927,9 @@
 	});
 	
 	})( jQuery );
-	
+
+//FIXME : ---------- js/jquery.mobile.widget.js (end) ----------// 
+//FIXME : ---------- js/widgets/loader.js (start) ----------// 
 	
 	(function( $, window ) {
 		// DEPRECATED
@@ -1092,7 +1104,11 @@
 			$.mobile.loaderWidget = $.mobile.loaderWidget || $( $.mobile.loader.prototype.defaultHtml ).loader();
 		});
 	})(jQuery, this);
+
 	
+//FIXME : ---------- js/widgets/loader.js (end) ----------// 
+
+//FIXME : ---------- js/jquery.mobile.vmouse.js (start) ----------// 
 	
 	
 	// This plugin is an experiment for abstracting away the touch and mouse
@@ -1596,6 +1612,10 @@
 		}, true);
 	}
 	})( jQuery, window, document );
+
+
+//FIXME : ---------- js/jquery.mobile.vmouse.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.support.touch.js (start) ----------// 
 	
 		(function( $, undefined ) {
 			var support = {
@@ -1608,6 +1628,8 @@
 			$.extend( $.mobile.support, support );
 		}( jQuery ));
 	
+//FIXME : ---------- js/jquery.mobile.support.touch.js (end) ----------// 
+//FIXME : ---------- js/events/touch.js (start) ----------// 
 	
 	(function( $, window, undefined ) {
 		// add new event shortcuts
@@ -1803,6 +1825,10 @@
 		});
 	
 	})( jQuery, this );
+
+
+//FIXME : ---------- js/events/touch.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.support.orientation.js (start) ----------// 
 	
 		(function( $, undefined ) {
 			$.extend( $.support, {
@@ -1810,6 +1836,8 @@
 			});
 		}( jQuery ));
 	
+//FIXME : ---------- js/jquery.mobile.support.orientation.js (end) ----------// 
+//FIXME : ---------- js/events/throttledresize.js (start) ----------// 
 	
 		// throttled resize event
 		(function( $ ) {
@@ -1848,6 +1876,9 @@
 				diff;
 		})( jQuery );
 	
+//FIXME : ---------- js/events/throttledresize.js (end) ----------// 
+//FIXME : ---------- js/events/orientationchange.js (start) ----------// 
+
 	(function( $, window ) {
 		var win = $( window ),
 			event_name = "orientationchange",
@@ -1991,6 +2022,8 @@
 	
 	}( jQuery, this ));
 	
+//FIXME : ---------- js/events/orientationchange.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.media.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -2033,6 +2066,8 @@
 	})();
 	
 	})(jQuery);
+//FIXME : ---------- js/jquery.mobile.media.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.support.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -2218,6 +2253,9 @@
 	}
 	
 	})( jQuery );
+
+//FIXME : ---------- js/jquery.mobile.support.js (end) ----------// 
+//FIXME : ---------- js/widgets/page.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -2272,6 +2310,8 @@
 		}
 	});
 	})( jQuery );
+//FIXME : ---------- js/widgets/page.js (end) ----------// 
+//FIXME : ---------- js/jquery.hashchange.js (start) ----------// 
 	
 	// Script: jQuery hashchange event
 	// 
@@ -2653,6 +2693,8 @@
 	  
 	})(jQuery,this);
 	
+//FIXME : ---------- js/jquery.hashchange.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.transition.js (start) ----------// 
 	
 	(function( $, window, undefined ) {
 	
@@ -2818,6 +2860,10 @@
 	// Set the getMaxScrollForTransition to default if no implementation was set by user
 	$.mobile.getMaxScrollForTransition = $.mobile.getMaxScrollForTransition || defaultGetMaxScrollForTransition;
 	})( jQuery, this );
+
+
+//FIXME : ---------- js/jquery.mobile.transition.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.navigation.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -4376,6 +4422,10 @@
 		$.mobile.navreadyDeferred.done( function() { $.mobile._registerInternalEvents(); } );
 	
 	})( jQuery );
+
+
+//FIXME : ---------- js/jquery.mobile.navigation.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.navigation.pushstate.js (start) ----------// 
 	
 	(function( $, window ) {
 		// For now, let's Monkeypatch this onto the end of $.mobile._registerInternalEvents
@@ -4525,6 +4575,11 @@
 			}
 		});
 	})( jQuery, this );
+
+//FIXME : ---------- js/jquery.mobile.navigation.pushstate.js (stop) ----------// 
+
+//FIXME : ---------- js/jquery.mobile.transitions.js (start) ----------// 
+//FIXME : ---------- js/transitions/flip.js (start) ----------// 
 	
 	/*
 	* fallback transition for flip in non-3D supporting browsers (which tend to handle complex transitions poorly in general
@@ -4535,6 +4590,8 @@
 	$.mobile.transitionFallbacks.flip = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/flip.js (stop) ----------// 
+//FIXME : ---------- js/transitions/flow.js (start) ----------// 
 	/*
 	* fallback transition for flow in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4544,6 +4601,9 @@
 	$.mobile.transitionFallbacks.flow = "fade";
 	
 	})( jQuery, this );
+
+//FIXME : ---------- js/transitions/flow.js (stop) ----------// 
+//FIXME : ---------- js/transitions/pop.js (start) ----------// 
 	/*
 	* fallback transition for pop in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4553,6 +4613,8 @@
 	$.mobile.transitionFallbacks.pop = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/pop.js (stop) ----------// 
+//FIXME : ---------- js/transitions/slide.js (start) ----------// 
 	/*
 	* fallback transition for slide in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4566,6 +4628,8 @@
 	$.mobile.transitionFallbacks.slide = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/slide.js (stop) ----------// 
+//FIXME : ---------- js/transitions/slidedown.js (start) ----------// 
 	/*
 	* fallback transition for slidedown in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4575,6 +4639,8 @@
 	$.mobile.transitionFallbacks.slidedown = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/slidedown.js (stop) ----------// 
+//FIXME : ---------- js/transitions/slidefade.js (start) ----------// 
 	/*
 	* fallback transition for slidefade in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4585,6 +4651,8 @@
 	$.mobile.transitionFallbacks.slidefade = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/slidefade.js (stop) ----------// 
+//FIXME : ---------- js/transitions/slideup.js (start) ----------// 
 	/*
 	* fallback transition for slideup in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4594,6 +4662,8 @@
 	$.mobile.transitionFallbacks.slideup = "fade";
 	
 	})( jQuery, this );
+//FIXME : ---------- js/transitions/slideup.js (stop) ----------// 
+//FIXME : ---------- js/transitions/turn.js (start) ----------// 
 	/*
 	* fallback transition for turn in non-3D supporting browsers (which tend to handle complex transitions poorly in general
 	*/
@@ -4604,6 +4674,10 @@
 	
 	})( jQuery, this );
 	
+//FIXME : ---------- js/transitions/turn.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.transitions.js (stop) ----------// 
+
+//FIXME : ---------- js/jquery.mobile.degradeInputs.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.mobile.page.prototype.options.degradeInputs = {
@@ -4655,6 +4729,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/jquery.mobile.degradeInputs.js (stop) ----------// 
+//FIXME : ---------- js/widgets/dialog.js (start) ----------// 
 	(function( $, window, undefined ) {
 	
 	$.widget( "mobile.dialog", $.mobile.widget, {
@@ -4755,6 +4831,9 @@
 	});
 	
 	})( jQuery, this );
+//FIXME : ---------- js/widgets/dialog.js (stop) ----------// 
+
+//FIXME : ---------- js/widgets/page.sections.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -4846,6 +4925,10 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/page.sections.js (stop) ----------// 
+
+
+//FIXME : ---------- js/jquery.mobile.fieldContain.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -4864,6 +4947,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/jquery.mobile.fieldContain.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.grid.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -4912,6 +4997,8 @@
 		});
 	};
 	})( jQuery );
+//FIXME : ---------- js/jquery.mobile.grid.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.nojs.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -4922,6 +5009,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/jquery.mobile.nojs.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.buttonMarkup.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.fn.buttonMarkup = function( options ) {
@@ -5171,6 +5260,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/jquery.mobile.buttonMarkup.js (stop) ----------// 
+//FIXME : ---------- js/widgets/collapsible.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -5334,7 +5425,9 @@
 	});
 	
 	})( jQuery );
-	
+
+//FIXME : ---------- js/widgets/collapsible.js (stop) ----------// 
+//FIXME : ---------- js/widgets/collapsibleSet.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.widget( "mobile.collapsibleset", $.mobile.widget, {
@@ -5442,6 +5535,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/widgets/collapsibleSet.js (stop) ----------// 
+//FIXME : ---------- js/widgets/navbar.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.widget( "mobile.navbar", $.mobile.widget, {
@@ -5491,6 +5586,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/navbar.js (stop) ----------// 
+//FIXME : ---------- js/widgets/listview.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -5931,6 +6028,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/widgets/listview.js (stop) ----------// 
+//FIXME : ---------- js/widgets/listview.autodividers.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.mobile.listview.prototype.options.autodividers = false;
@@ -5990,6 +6089,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/widgets/listview.autodividers.js (stop) ----------// 
+//FIXME : ---------- js/widgets/forms/checkboxradio.js (start) ----------// 
 	/*
 	* "checkboxradio" plugin
 	*/
@@ -6189,6 +6290,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/widgets/forms/checkboxradio.js (stop) ----------// 
+//FIXME : ---------- js/widgets/forms/button.js (start) ----------// 
 	(function( $, undefined ) {
 	
 	$.widget( "mobile.button", $.mobile.widget, {
@@ -6333,6 +6436,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/forms/button.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.controlGroup.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -6392,6 +6497,8 @@
 	// The pagecreate handler for controlgroup is in jquery.mobile.init because of the soft-dependency on the wrapped widgets
 	
 	})(jQuery);
+//FIXME : ---------- js/jquery.mobile.controlGroup.js (stop) ----------// 
+//FIXME : ---------- js/jquery.mobile.link.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -6408,6 +6515,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/jquery.mobile.link.js (stop) ----------// 
+//FIXME : ---------- js/widgets/popup.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -7251,6 +7360,8 @@
 	
 	})( jQuery );
 	
+//FIXME : ---------- js/widgets/popup.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.zoom.js (start) ----------// 
 	(function( $ ) {
 		var	meta = $( "meta[name=viewport]" ),
 			initialContent = meta.attr( "content" ),
@@ -7284,6 +7395,8 @@
 		});
 	
 	}( jQuery ));
+//FIXME : ---------- js/jquery.mobile.zoom.js (end) ----------// 
+//FIXME : ---------- js/widgets/forms/textinput.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -7448,6 +7561,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/forms/textinput.js (end) ----------// 
+//FIXME : ---------- js/widgets/listview.filter.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -7573,6 +7688,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/listview.filter.js (end) ----------// 
+//FIXME : ---------- js/widgets/forms/slider.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -8041,6 +8158,8 @@
 	});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/forms/slider.js (end) ----------// 
+//FIXME : ---------- js/widgets/forms/select.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -8292,6 +8411,8 @@
 		$.mobile.selectmenu.prototype.enhanceWithin( e.target, true );
 	});
 	})( jQuery );
+//FIXME : ---------- js/widgets/forms/select.js (end) ----------// 
+//FIXME : ---------- js/widgets/forms/select.custom.js (start) ----------// 
 	
 	/*
 	* custom "selectmenu" plugin
@@ -8798,6 +8919,8 @@
 			}
 		});
 	})( jQuery );
+//FIXME : ---------- js/widgets/forms/select.custom.js (end) ----------// 
+//FIXME : ---------- js/widgets/fixedToolbar.js (start) ----------// 
 	
 	(function( $, undefined ) {
 	
@@ -9072,6 +9195,8 @@
 			});
 	
 	})( jQuery );
+//FIXME : ---------- js/widgets/fixedToolbar.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.zoom.iosorientationfix.js (start) ----------// 
 	
 	(function( $, window ) {
 	
@@ -9106,6 +9231,8 @@
 			.bind( "devicemotion.iosorientationfix", checkTilt );
 	
 	}( jQuery, this ));
+//FIXME : ---------- js/jquery.mobile.zoom.iosorientationfix.js (end) ----------// 
+//FIXME : ---------- js/jquery.mobile.init.js (start) ----------// 
 	
 	(function( $, window, undefined ) {
 		var	$html = $( "html" ),
@@ -9256,6 +9383,8 @@
 			}
 		});
 	}( jQuery, this ));
+//FIXME : ---------- js/jquery.mobile.init.js (end) ----------// 
 	
 	})
 );
+//FIXME : ---------- build/wrap.end (end) ----------// 
