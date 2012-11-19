@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overlay Popup</title>
+<link rel=stylesheet href="../css/jquery.mobile.css" />
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.mobile.js"></script>
+</head>
+<body>
+
+	<div data-role="page" class="type-interior">
+
+		<div data-role="header" data-theme="f" data-position="fixed">
+			<h1>Popup</h1>
+			<a href="../../../" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+			<a href="../../nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade">Search</a>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content" class="ui-body">
+			<div class="content-primary">
+
+
+				<a href="#popupDialog" data-rel="popup" data-transition="fade"
+					data-role="button" data-inline="true">Dialog</a>
+
+
+				<div data-role="popup" id="popupDialog" data-overlay-theme="d"
+					data-theme="c" data-shadow="true"
+					style="max-width: 500px; background-color: transparent; background-image: none; width: 500px; height: 500px;"
+					class="ui-corner-all" data-transition="pop">
+					<div data-role="header" data-theme="d" class="ui-corner-top">
+						<h1>Dialog</h1>
+					</div>
+					<div data-role="content" data-theme="d" style="padding: 15px;"
+						class="ui-corner-bottom">
+						<h1>Delete page?</h1>
+						<p>
+							This is a regular page, styled as a dialog. To create a dialog,
+							just link to a normal page and include a transition and
+							<code>data-rel="dialog"</code>
+							attribute.
+						</p>
+						<a href="docs-dialogs.html" data-role="button" data-rel="back"
+							data-theme="b" data-corners="true" data-shadow="true"
+							data-iconshadow="true" data-wrapperels="span"
+							class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b"><span
+							class="ui-btn-inner ui-btn-corner-all"><span
+								class="ui-btn-text">Sounds good</span></span></a> <a
+							href="docs-dialogs.html" data-role="button" data-rel="back"
+							data-theme="c" data-corners="true" data-shadow="true"
+							data-iconshadow="true" data-wrapperels="span"
+							class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span
+							class="ui-btn-inner ui-btn-corner-all"><span
+								class="ui-btn-text">Cancel</span></span></a>
+					</div>
+				</div>
+
+
+				<!--/content-primary -->
+
+			</div>
+			<!-- /content -->
+
+			<div data-role="footer" class="footer-docs" data-theme="c">
+				<p class="jqm-version"></p>
+				<p>&copy; 2012 jQuery Foundation and other contributors</p>
+			</div>
+
+		</div>
+	</div>
+		<!-- /page -->
+</body>
+</html>

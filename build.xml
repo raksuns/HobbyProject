@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ant_ftp_upload" default="upload" basedir=".">
+	<target name="upload">
+		<ftp server="58.102.122.183" 
+			port="21" 
+			remotedir="/home/naksun/public_html/hobby" 
+			userid="naksun" 
+			password="1234qwer" 
+			passive="yes"
+			verbose="yes" 
+			depends="yes" 
+			timediffauto="yes">
+			<fileset dir=".">
+				<include name="**/*"/>
+			</fileset>
+		</ftp>
+	</target>
+</project>

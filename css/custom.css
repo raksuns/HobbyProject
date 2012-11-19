@@ -1,0 +1,39 @@
+.ui-li-thumb, .ui-listview .ui-li-icon { 
+	position: absolute; left: 1px; top: 0; max-height: 50px; max-width: 50px;
+}
+
+.ui-li-thumb, .ui-listview .ui-li-icon, .ui-li-content { 
+	float: left; 
+	margin-left: 2px; 
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
+	min-height: 30px;
+
+	padding-left: 55px;
+	padding-right: 5px;
+
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+	min-height: 1.1em;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	margin: .6em 15% .8em;
+	padding: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: 0 !important;
+}
+
+.ui-footer .ui-title {
+	margin: .6em 15px .8em;
+}
+
+.ui-li .ui-btn-text a.ui-link-inherit {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: normal;
+}

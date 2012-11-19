@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jCoverflip Test</title>
+    
+<link rel=stylesheet href="../css/jquery.mobile.css" />
+    <style>
+      .ui-jcoverflip {
+        position: relative;
+      }
+      
+      .ui-jcoverflip--item {
+        position: absolute;
+        display: block;
+      }
+      
+      /* Basic sample CSS */
+      #flip {
+        height: 200px;
+        width: 630px;
+        margin-bottom: 50px;
+      }
+      
+      #flip .ui-jcoverflip--title {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        text-align: center;
+        color: #555;
+      }
+      
+      #flip img {
+        display: block;
+        border: 0;
+        outline: none;
+      }
+      
+      #flip a {
+        outline: none;
+      }
+      
+      
+      #wrapper {
+        height: 300px;
+        width: 630px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .ui-jcoverflip--item {
+        cursor: pointer;
+      }
+      
+      
+      
+      body {
+        font-family: Arial, sans-serif;
+        width: 630px;
+        padding: 0;
+        margin: 0;
+      }
+      
+      ul,
+      ul li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style-type: none;
+      }
+      
+      #scrollbar {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        
+      }
+      
+
+    </style>
+    
+    <script type="text/javascript" src="../js/jquery.js"></script> 
+    <script type="text/javascript" src="../js/jquery.mobile.js"></script> 
+    <script type="text/javascript" src="../js/jquery.jcoverflip.js"></scrip>
+    <script>
+    
+    </script>
+    
+    <script>
+    jQuery( document ).ready( function(){
+        jQuery( '#flip' ).jcoverflip({
+          current: 2,
+          beforeCss: function( el, container, offset ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*offset + 20*offset )+'px', bottom: '20px' }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+            ];
+          },
+          afterCss: function( el, container, offset ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*offset )+'px', bottom: '20px' }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+            ];
+          },
+          currentCss: function( el, container ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: '200px' }, { } )
+            ];
+          },
+          change: function(event, ui){
+            jQuery('#scrollbar').slider('value', ui.to*25);
+          }
+        });
+        
+        
+        jQuery('#scrollbar').slider({
+          value: 50,
+          stop: function(event, ui) {
+            if(event.originalEvent) {
+              var newVal = Math.round(ui.value/25);
+              jQuery( '#flip' ).jcoverflip( 'current', newVal );
+              jQuery('#scrollbar').slider('value', newVal*25);
+            }
+          }
+        });
+      });
+      
+      
+    </script>
+        
+  </head>
+  <body>
+    <div id="wrapper">
+    <ul id="flip">
+      <li title="The first image" ><img src="../images/1.png" /></li>
+      <li title="A second image" ><img src="../images/2.png" /></li>
+      <li title="This is the description" ><img src="../images/5.png" /></li>
+      <li title="Another description" ><img src="../images/4.png" /></li>
+      <li title="A title for the image" ><img src="../images/3.png" /></li>
+      
+    </ul>
+    <div id="scrollbar"></div>
+    </div>
+  </body>
+</html>
