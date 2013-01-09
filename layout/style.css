@@ -1,0 +1,58 @@
+* {
+	background-color:#444;
+	margin: 0;
+	padding: 0;
+}
+
+#first {
+	position: absolute;
+	background-color: #f00;
+	width: 150px;
+	height: 30px;
+	top:20px;
+	left:20px;
+}
+
+#second {
+	background-color: #0f0;
+	position: absolute;
+	width: 150px;
+	height: 30px;
+	top: 40px;
+	left: 30px;
+}
+
+#third {
+	background-color: #00f;
+	position: fixed;
+	width: 150px;
+	height: 30px;
+	top: 70px;
+	left: 30px;
+}
+
+#forth {
+	background-color: #ff0;
+	position: absolute;
+	height: 30px;
+	right: 0px;
+	left: 10px;
+}
+
+#fifth {
+	position: absolute;
+	background-color: #0ff;
+	width: 150px;
+	height: 30px;
+	top: 80px;
+	left: 50px;
+}
+
+#inner {
+	position: relative;
+	background-color: #333;
+	width: 300px;
+	height: 300px;
+	top:60px;
+	left: 80px;
+}

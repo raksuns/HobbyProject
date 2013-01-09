@@ -1,0 +1,90 @@
+.border-blue {
+	border: 1px solid blue;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	border: 1px solid red;
+	float: left;
+}
+
+.menu {
+	position: relative;
+	display:inline-block;
+	width: 80px;
+	border: 1px solid blue;
+	text-align:center;
+}
+
+.menu2 {
+	position: static;
+	display: inline;
+	width: 80px;
+	border: 1px solid blue;
+	text-align:center;
+}
+
+
+div#content{
+	width: 200px;
+	height: 200px;
+	background-color: silver;
+	float: left;  
+}
+
+div#side{
+	width: 300px;
+	height: 100px;
+	background-color: fuchsia;
+}
+
+div#footer{
+	width: 300px;
+	height: 50px;
+	background-color: aqua;
+	clear: left;
+}
+
+div#text1 {
+	z-index: 10;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 500px;
+	left: 10px;
+	background-color: silver;  
+}
+div#text2{
+	z-index: 9;
+	position: absolute;
+	top: 550px;
+	left: 60px;
+	width: 150px;
+	height: 150px;
+	background-color: fuchsia;
+}
+div#text3{
+	z-index: 8;
+	position: absolute;
+	top: 600px;
+	left: 110px;
+	width: 150px;
+	height: 150px;
+	background-color: aqua;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.clip-test {
+	position: absolute;
+	clip: rect(40px, 400px, 400px, 100px);
+}
