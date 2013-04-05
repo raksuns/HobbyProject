@@ -44,6 +44,8 @@ body {
 		<option>3</option>
 	</select>
 </label>
+
+
 <br/>
 <label for="s2" style="margin-bottom: 0px;">non selected :
 	<select class="span1" style="padding: 2px 2px;margin-bottom:0px;height: 25px;line-height: 25px;">
@@ -52,6 +54,8 @@ body {
 		<option>3</option>
 	</select>
 </label>
+
+
 <label for="s3" style="margin-bottom: 0px;">non selected :
 <div class="btn-group">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
@@ -62,13 +66,83 @@ body {
 		<li><a href="#">Something else here</a></li>
 		<li><a href="#">Separated link</a></li>
 	</ul>
-</div><!-- /btn-group -->
+</div>
 </label>
 
 
 <label for="inlineCheckbox1" style="margin-bottom: 0px;">  able ?
 	<input type="checkbox" id="inlineCheckbox1" value="options1" style="margin: 0;">
+	<input type="checkbox" id="inlineCheckbox2" value="options2" style="margin: 0;">
 </label>
+
+<label class="radiogroup" style="margin-bottom: 0px;">
+radio group <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"  style="margin: 0;" checked>
+<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"  style="margin: 0;">
+</label>
+
+<span class="label"><img src="" class="img-rounded"/>Choose...</span>
+
+<br/>
+
+<div class="btn-group" data-toggle="buttons-radio">
+	<button class="btn btn-small btn-success">left</button>
+	<button class="btn btn-small btn-success">top</button>
+	<button class="btn btn-small btn-success">bottom</button>
+	<button class="btn btn-small btn-success">right</button>
+</div>
+
+<br/>
+
+<div class="accordion" id="accordion2">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				<button class="btn btn-small"><i class="icon-plus-sign"></i> Item</button>
+			</a>
+		</div>
+		<div id="collapseOne" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<label for="inputs" style="margin-bottom: 0px;">input :
+					<input type="text" class="span2" id="inputs" style="padding: 2px 2px;margin-bottom:0px;">
+				</label>
+				<label for="inputs2" style="margin-bottom: 0px;">input :
+					<input type="text" class="span2" id="inputs2" style="padding: 2px 2px;margin-bottom:0px;">
+				</label>
+				<label for="inlineCheckbox1" style="margin-bottom: 0px;">  able ?
+					<input type="checkbox" id="inlineCheckbox1" value="options1" style="margin: 0;">
+					<input type="checkbox" id="inlineCheckbox2" value="options2" style="margin: 0;">
+				</label>
+				<button class="btn btn-warning"><i class="icon-trash"></i> Delete</button>
+			</div>
+		</div>
+	</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+				<button class="btn btn-small"><i class="icon-plus-sign"></i> Item</button>
+			</a>
+		</div>
+		<div id="collapse2" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<label for="inputs" style="margin-bottom: 0px;">input :
+					<input type="text" class="span2" id="inputs" style="padding: 2px 2px;margin-bottom:0px;">
+				</label>
+				<label for="inputs2" style="margin-bottom: 0px;">input :
+					<input type="text" class="span2" id="inputs2" style="padding: 2px 2px;margin-bottom:0px;">
+				</label>
+				<label for="inlineCheckbox1" style="margin-bottom: 0px;">  able ?
+					<input type="checkbox" id="inlineCheckbox1" value="options1" style="margin: 0;">
+					<input type="checkbox" id="inlineCheckbox2" value="options2" style="margin: 0;">
+				</label>
+				<button class="btn btn-warning"><i class="icon-trash"></i> Delete</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<button class="btn btn btn-success"><i class="icon-plus-sign"></i> New Item</button>
+
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
