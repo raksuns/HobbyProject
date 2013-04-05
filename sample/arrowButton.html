@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=viewport content="user-scalable=no,width=device-width" />
+<link rel=stylesheet href="../css/jquery.mobile.css" />
+<link rel=stylesheet href="../css/slideoutmenu.css" />
+<link rel=stylesheet href="../css/custom.css" />
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.mobile.js"></script>
+<script src="../js/slideoutmenu.js"></script>
+</head>
+
+<body>
+<div id="menu">
+<h3>Menu</h3>
+    <ul>
+        <li class="active"><a href="#home"><img class="ui-corner-all" src="../images/menuBtn.png" width="50" height="50"/></a></li>
+        <li><a href="#home"><img class="ui-corner-all" src="../images/menuBtn.png" width="50" height="50"/></a></li>
+        <li><a href="#home"><img class="ui-corner-all" src="../images/menuBtn.png" width="50" height="50"/></a></li>
+        <li><a href="#home"><img class="ui-corner-all" src="../images/menuBtn.png" width="50" height="50"/></a></li>
+    </ul>
+</div>
+<div data-role="page">
+	<div data-role="header">
+		<a href="#" class="showMenu">Menu</a>
+		<h1>Samsung Media Center Setting</h1>
+	</div>
+	<div data-role="content" class="ui-body">
+		<div  class="content-primary">
+			<input type="search" name="contents-search" id="search-contents" value="" data-mini="true" placeholder="Contents Search" />
+			<p>
+			<ul data-role="listview" data-inset="true" data-icon="false">
+				<li data-role="list-divider">Video</li>
+				<li>
+					<a href="index.html">
+					<img class="ui-corner-all" src="http://i2.media.daumcdn.net/photo-media/201210/30/akn/C_90x90_20121030203120369.jpg" />
+					line text aaaaaaaaaaaaaaaa bbb cccccc ddd eee fff aaaaaaaaaaaaaaaa bbb cccccc ddd eee fff
+					</a>
+				</li>
+				<li>
+					<a href="index.html">
+					<img class="ui-corner-all" src="http://i2.media.daumcdn.net/photo-media/201211/11/newsen/C_90x90_20121111082710678.jpg" />
+					<h3>Warning</h3>
+					<p>Hot Chip</p>
+					</a>
+				</li>
+			</ul>
+			</p>
+			<input type="search" name="device-search" id="search-device" value="" data-mini="true" placeholder="Device Search" />
+		</div>
+	</div>
+</div>
+</body>
+</html>

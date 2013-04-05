@@ -1,0 +1,27 @@
+#header {
+	clear: both;
+}
+
+#container {
+	float: none;
+}
+
+#lnb {
+	float: left;
+}
+
+#content {
+	float: right;
+}
+
+#footer {
+	clear: both;
+}
+
+.clear {
+	clear: both;
+}
+
+li {
+	display:inline-block; /* Op, Saf, Moz3.0이상, IE8등 */
+}
