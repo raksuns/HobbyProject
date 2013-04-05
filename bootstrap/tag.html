@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrap, from Twitter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href="./libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+<script src="./libs/jquery/jquery-1.9.1.js"></script>
+<script src="./libs/bootstrap/js/bootstrap.js"></script>
+
+<style>
+body {
+	padding-top: 60px;
+}
+
+.dsn-inputfieldedit {
+	position: relative;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 120px;
+}
+.dsn-inputfield-label {
+	font-weight: bold;
+	font-size: 13px;
+	color: #3f3f3f;
+	text-shadow: 1px 1px #fff;
+	position: absolute;
+	width: 120px;
+	left: 0px;
+	text-align: right;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.dsn-inputfieldedit-wrap {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.dsn-inputfieldedit-wrap input[type="text"] {
+	margin-bottom: 0px;
+	padding: 2px 3px;
+	padding-right: 5px;
+	padding-left: 1px;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 0px;
+}
+
+.dsn-inputfieldradiogroup {
+	position: relative;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 120px;
+}
+
+.dsn-inputfieldradiogroup-wrap {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.dsn-inputfieldradiogroup-input-label{
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 13px;
+	color: #3f3f3f;
+	text-shadow: 1px 1px #fff;
+}
+
+.dsn-inputfieldradiogroup .dsn-inputfield-label {
+	top: 7px;
+}
+
+.dsn-inputfieldcheckbox {
+	position: relative;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 120px;
+}
+
+.dsn-inputfieldcheckbox-wrap {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+.dsn-inputfieldcombo {
+	position: relative;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 120px;
+}
+
+.dsn-inputfieldcombo-wrap {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.dsn-inputfieldcombo-wrap select {
+	margin-bottom: 0px;
+	padding: 2px 3px;
+	padding-right: 5px;
+	padding-left: 1px;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 0px;
+	height: 25px;
+}
+</style>
+</head>
+
+<body>
+<div style="
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid red;
+">
+<div class="dsn-inputfieldedit">
+	<div class="dsn-inputfield-label">
+		data-add-back-btn
+	</div>
+	<div class="dsn-inputfieldedit-wrap">
+		<input type="text">
+	</div>
+</div>
+
+<div class="dsn-inputfieldedit">
+	<div class="dsn-inputfield-label">
+		data-text
+	</div>
+	<div class="dsn-inputfieldedit-wrap">
+		<input type="text">
+	</div>
+</div>
+
+<div class="dsn-inputfieldradiogroup">
+	<div class="dsn-inputfield-label">
+		data-add-back-btn
+	</div>
+	<div class="dsn-inputfieldradiogroup-wrap btn-group" data-toggle="buttons-radio">
+		<button class="btn btn-small active">true</button>
+		<button class="btn btn-small">false</button>
+	</div>
+</div>
+
+<div class="dsn-inputfieldcheckbox">
+	<div class="dsn-inputfield-label">
+		data-text
+	</div>
+	<div class="dsn-inputfieldcheckbox-wrap">
+		<input type="checkbox" checked>
+	</div>
+</div>
+
+
+<div class="dsn-inputfieldcombo">
+	<div class="dsn-inputfield-label">
+		data-theme
+	</div>
+	<div class="dsn-inputfieldcombo-wrap">
+		<select>
+			<option value="a" selected>a</option>
+			<option value="b">b</option>
+			<option value="c">c</option>
+		</select>
+	</div>
+</div>
+</div>
+</body>
+</html>
