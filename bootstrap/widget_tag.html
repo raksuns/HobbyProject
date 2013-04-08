@@ -88,6 +88,10 @@ body {
 	margin-right: 10px;
 }
 
+.dsn-inputfieldcheckbox-wrap  input[type="checkbox"]{
+	margin: 0;
+}
+
 
 .dsn-inputfieldcombo {
 	position: relative;
@@ -111,9 +115,41 @@ body {
 	border-radius: 0px;
 	height: 25px;
 }
+
+.dsn-collapse .accordion {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.dsn-collapse .accordion-toggle {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.dsn-collapse .btn-title {
+	border-radius: 15px;
+	text-align: left;
+}
+.dsn-collapse .dsn-inputfieldedit {
+	padding-left: 60px;
+}
+.dsn-collapse .dsn-inputfieldedit {
+	padding-left: 60px;
+}
+.dsn-collapse .dsn-inputfieldcheckbox {
+	padding-left: 60px;
+}
+.dsn-collapse .dsn-inputfield-label {
+	width: 60px;
+}
+.dsn-collapse .btn-danger {
+	margin-top: 10px;
+	border-radius: 15px;
+}
+.dsn-collapse .btn-success {
+	border-radius: 15px;
+}
+
 </style>
 </head>
-
 <body>
 <div style="
     padding: 30px;
@@ -170,6 +206,51 @@ body {
 		</select>
 	</div>
 </div>
+
+<div class="dsn-inputfieldextendable">
+	<div class="accordion">
+	
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">
+					<button class="btn btn-info btn-small btn-title"><i class="icon-plus-sign"></i> Item</button>
+				</a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					<div class="dsn-inputfieldedit">
+						<div class="dsn-inputfield-label">
+							data-text
+						</div>
+						<div class="dsn-inputfieldedit-wrap">
+							<input type="text">
+						</div>
+					</div>
+					<div class="dsn-inputfieldedit">
+						<div class="dsn-inputfield-label">
+							data-text
+						</div>
+						<div class="dsn-inputfieldedit-wrap">
+							<input type="text">
+						</div>
+					</div>
+					<div class="dsn-inputfieldcheckbox">
+						<div class="dsn-inputfield-label">
+							data-text
+						</div>
+						<div class="dsn-inputfieldcheckbox-wrap">
+							<input type="checkbox" checked>
+						</div>
+					</div>
+					<button class="btn btn-small btn-danger"><i class="icon-trash"></i> Delete</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<button class="btn btn-success btn-small"><i class="icon-plus-sign"></i> New Item</button>
+</div>
+
 </div>
 </body>
 </html>
