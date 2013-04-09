@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<script src="./bootstrap/libs/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){  
+	  var $doc           = $(document);  
+	  var $win           = $(window);  
+	  var $body          = $('body');  
+	  var position       = 0;  
+	  var top            = $doc.scrollTop();  
+	  var screenSize     = 0;  
+	  var halfScreenSize = 0;  
+	  var $layer         = $('#floating');  
+	  var tValues        = $layer.attr('values');  
+	  $layer.css("position","absolute");  
+	  
+	  //기본값  
+	  var type       = 'left';  
+	  var margin     = '0';  
+	  var speed      = '1000';  
+	  var easing     = 'linear';  
+	  var topMargin  = '0';  
+	  var minTop     = '0';  
+	  $layer.css('z-index', '10');  
+	  
+	  //값이 있는 경우에만  
+	  if (tValues)  
+	  {  
+	    //json값으로 바꾸고  
+	    setValues  = eval("("+tValues+")");  
+	    //값이 있는 경우에만 값을 가져옴  
+	    if (setValues.pageWidth)  
+	      var offset = parseInt(setValues.pageWidth)/2;  
+	    else  
+	    {  
+	     alert('pageWidth값은 필수입니다.');  
+	     return false;  
+	    }  
+	    margin      = (setValues.margin)? parseInt(setValues.margin):'0';  
+	    speed       = (setValues.speed)? parseInt(setValues.speed):'1000';  
+	    easing      = (setValues.easing)? setValues.easing:'linear';  
+	    topMargin   = (setValues.topMargin)? parseInt(setValues.topMargin):'0';  
+	    minTop      = (setValues.minTop)? parseInt(setValues.minTop):'0';  
+	    $layer.css('z-index', (setValues.zindex)? setValues.zindex:'10');  
+	    marginResult = offset + margin;  
+	  
+	    //좌측인 경우  
+	    if (setValues.type == 'left')  
+	     type = 'right';  
+	  }  
+	  
+	  //좌우 위치값 정해주는 함수  
+	  function resetXPosition()  
+	  {  
+	    $screenSize = $body.width();  
+	    halfScreenSize = $screenSize/2;  
+	    xPosition = halfScreenSize + marginResult;  
+	    $layer.css(type, xPosition);  
+	  }  
+	  
+	  //최초 좌우 및 상단위치  
+	  resetXPosition();  
+	  $layer.css('top',topMargin);  
+	  
+	  //윈도우 크기가 바뀌면  
+	  $win.resize(resetXPosition);  
+	  
+	  //스코롤하면  
+	  $win.scroll(function(){  
+	    //스크롤 상태에서 상단과의 거리  
+	    top = $doc.scrollTop();  
+	    if (top > topMargin+minTop)  
+	      yPosition = top + minTop;  
+	    else  
+	      yPosition = top + topMargin;  
+	  
+	    //따라다니기 적용  
+	    $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});  
+	  });  
+	});
+</script>
+</head>
+<body>
+<div style="border: 1px solid red; height: 1200px; width: 800px;">aaa</div>
+<div id="floating" style="border: 1px solid red; height: 200px; width: 100px;"
+	values="{'pageWidth':'200','type':'right','topMargin':'100','minTop':'200', 'margin':'20','speed':'500','easing':'swing','zindex':'10'}"  >  
+  레이어 내용  
+</div>
+</body>
+</html>
