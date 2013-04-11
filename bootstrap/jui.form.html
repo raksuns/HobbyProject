@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrap, from Twitter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href="./libs/jqueryui/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+<!-- <link href="./libs/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+
+<script src="./libs/jquery/jquery-1.9.1.js"></script>
+<script src="./libs/jqueryui/jquery-ui-1.10.2.custom.js"></script>
+<script src="./libs/jquery.form.js"></script>
+<!-- <script src="./libs/bootstrap/js/bootstrap.js"></script> -->
+<script type="text/javascript">
+
+$(function() {
+	
+	$('table thead tr th').addClass('ui-state-default');
+	$('table tbody tr td').addClass('ui-widget-content td-clear');
+	$('#btnsearch').button({icons: {primary: 'ui-icon-search'}});
+	$('#btninsert').button({icons: {primary: 'ui-icon-plusthick'}});
+	$('#btnimport').button({icons: {primary: 'ui-icon-arrowreturnthick-1-n'}});
+	$('#btnexport').button({icons: {primary: 'ui-icon-arrowreturnthick-1-s'}});
+	
+
+	var frm = $('#frmWebInventoryFile');
+	frm.ajaxForm(FileUploadCallBack);
+	
+	$('#btnimport').click(function() {
+		$('#importPanel').dialog({width: 500, modal: true});
+		return false;
+	});
+	
+	$('#UpdateOptionPanel').buttonset();
+	$('#CompanyPanel').buttonset();
+	$('#DataTypePanel').buttonset();
+	
+	$('#rdoSelini').button({disabled: true});
+	$('#rdoBoxed').button({disabled: true});
+	
+	$('#rdoAmazon').button({disabled: true});
+	$('#rdoNetsol').button({disabled: true});
+	$('#rdoeBay').button({disabled: true});
+	
+	$('#btnSend').button({
+		icons: {primary: 'ui-icon-signal-diag'},
+		disabled: true
+	});
+	
+	$('#btnSend').click(function(){
+		if(ImportErrorCheckUp()) {
+			FileUpload();
+		}
+	});
+	
+	var FileUploadCallBack = function() {
+		console.log('FileUploadCallBack');
+	};
+});
+
+</script>
+<style>
+body {
+	font-family: "Arial",  "Verdana", "sans-serif";
+	font-size: 70.5%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table td, table th {
+	padding 5px;
+	vertical-align: middle;
+	font-size: 0.8em;
+}
+
+table thead tr th {
+	text-transform: uppercase;
+}
+
+table tfoot tr th, table tfoot tr td {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+table caption {
+	font-size: 1.1em;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.td-clear {
+	background: #fff;
+}
+</style>
+</head>
+<body>
+<!-- ########################################################################## -->
+
+		<a class="btn" id="write">Write</a>
+
+<button id="btnsearch">Search</button>
+<a id="btninsert">Insert</a>
+<a id="btnimport">Import</a>
+<a id="btnexport">Export</a>
+		
+<table cellpadding="0" cellspacing="0" width="70%" class="ui-widget">
+	<caption class="ui-widget-header">Web Inventory - Ver 0.0.1</caption>
+	<col width="12%"/>
+	<col width="12%"/>
+	<col width="12%"/>
+	<col width="16%"/>
+	<col width="16%"/>
+	<col width="16%"/>
+	<col width="16%"/>
+	<thead>
+		<tr>
+			<th rowspan="2">No.</th>
+			<th rowspan="2">Quantity.</th>
+			<th rowspan="2">Unique Code</th>
+			<th>SeliniNY</th>
+			<th colspan="3">Boxed-Gifts</th>
+		</tr>
+		<tr>
+			<th>NetSol</th>
+			<th>NetSol</th>
+			<th>Amazon</th>
+			<th>eBay</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+		</tr>
+	</tbody>
+</table>
+
+<div id='importPanel' title='Import Information' style='display:none;'>
+	<form id='frmWebInventoryFile' enctype='multipart/form-data' method='post' action=''>
+		Update Option :
+		<div id='UpdateOptionPanel' style='margin:5px;'>
+			<input type='radio' runat='server' name='rdoUpdateOption' id='rdoProductList' onclick='SelUpdateOption()'/>
+			<label for='rdoProductList' style='margin:5px;'>ProductList Order</label>
+			<input type='radio' runat='server' name='rdoUpdateOption' id='rdoSalesOrder' onclick='SelUpdateOption()'/>
+			<label for='rdoSalesOrder' style='margin:5px;'>Sales Order</label>
+		</div>
+		
+		Company :
+		<div id='CompanyPanel' style='margin:5px;'>
+			<input type='radio' runat='server' name='rdoCompany' id='rdoSelini' onclick='SelCompany(0)'/>
+			<label for='rdoSelini' style='margin:5px;'>SeliniNY</label>
+			<input type='radio' runat='server' name='rdoCompany' id='rdoBoxed' onclick='SelCompany(1)'/>
+			<label for='rdoBoxed' style='margin:5px;'>Boxed-Gifts</label>
+		</div>
+		
+		Data Type :
+		<div id='DataTypePanel' style='margin:5px;'>
+			<input type='radio' runat='server' name='rdoDataType' id='rdoNotsol' onclick='SelDataType()'/>
+			<label for='rdoNotsol' style='margin:5px;'>NetSol</label>
+			<input type='radio' runat='server' name='rdoDataType' id='rdoAmazon' onclick='SelDataType()'/>
+			<label for='rdoAmazon' style='margin:5px;'>Amazon</label>
+			<input type='radio' runat='server' name='rdoDataType' id='rdoeBay' onclick='SelDataType()'/>
+			<label for='rdoeBay' style='margin:5px;'>eBay</label>
+		</div>
+		
+		<label>Import : </label>
+		<input type="file" name="file" id="dlgFile"/>
+		<button id='btnSend'>Send</button>
+	</form>
+</div>
+<!-- ########################################################################## -->
+</body>
+</html>
