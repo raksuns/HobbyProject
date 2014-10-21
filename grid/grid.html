@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Example of Twitter Bootstrap 3 Grid System</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+    p{
+        padding: 50px;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        background: #f2f2f2;
+    }
+
+	ul {
+		margin: 0;
+		list-style: none;
+		padding: 0;
+	}
+    .grid-col {
+    	display: inline-block;
+    	height: 160px;
+    	padding: 10px;
+    	margin-bottom:10px;
+    	background: #f2f2f2;
+    	clear: both;
+    }
+    .grid-col-one {
+		width: 100%;
+    }
+    
+    .grid-col-two {
+       	width: 49.8%;
+    }
+    
+    .grid-col-three {
+       	width: 33.1%;
+    }
+    
+    .grid-col-four {
+       	width: 24.74%;
+    }
+</style>
+</head>
+<body>
+<button type="button" class="btn btn-info" id="one">1</button>
+<button type="button" class="btn btn-info" id="two">2</button>
+<button type="button" class="btn btn-info" id="three">3</button>
+<button type="button" class="btn btn-info" id="four">4</button>
+
+    <div class="container" style="border: 1px solid red">
+    	<ul class="row" id="grid">
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+			<li class="grid-col grid-col-one">1111111</li>
+    	</div>
+    </div>
+    
+<script>
+$(function() {
+	var changeGrid = function(e) {
+		var id = e.target.id;
+		
+		var cols = $("#grid .grid-col");
+		
+		cols.removeClass (function (index, css) {
+   			return (css.match (/(^|\s)grid-col-\S+/g) || []).join('');
+		});
+		
+		cols.addClass("grid-col-" + id);
+	};
+
+	$("#one,#two,#three,#four").click(changeGrid);
+});
+</script>
+</body>
+</html>                                		
