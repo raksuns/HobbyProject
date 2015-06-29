@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="./libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="./libs/bootstrap/css/font-awesome.css" rel="stylesheet">
+	<script src="./libs/jquery/jquery-1.9.1.js"></script>
+	<script src="./libs/bootstrap/js/bootstrap.js"></script>
+<style>
+	.modal-dialog-center {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+
+	.modal-body {
+		overflow-y: auto;
+	}
+	.modal-footer {
+		margin-top: 0;
+	}
+
+	@media (max-width: 767px) {
+		.modal-dialog-center {
+			width: 100%;
+		}
+	}
+</style>
+	<script type="text/javascript">
+		function adjustModalMaxHeightAndPosition(){
+			$('.modal').each(function(){
+				if($(this).hasClass('in') === false){
+					$(this).show();
+				}
+				var contentHeight = $(window).height() - 60;
+				var headerHeight = $(this).find('.modal-header').outerHeight() || 2;
+				var footerHeight = $(this).find('.modal-footer').outerHeight() || 2;
+
+				$(this).find('.modal-content').css({
+					'max-height': function () {
+						return contentHeight;
+					}
+				});
+
+				$(this).find('.modal-body').css({
+					'max-height': function () {
+						return contentHeight - (headerHeight + footerHeight);
+					}
+				});
+
+				$(this).find('.modal-dialog').addClass('modal-dialog-center').css({
+					'margin-top': function () {
+						return -($(this).outerHeight() / 2);
+					},
+					'margin-left': function () {
+						return -($(this).outerWidth() / 2);
+					}
+				});
+				if($(this).hasClass('in') === false){
+					$(this).hide();
+				}
+			});
+		}
+
+		if ($(window).height() >= 320){
+			$(window).resize(adjustModalMaxHeightAndPosition).trigger("resize");
+		}
+
+		$(document).ready(function() {
+			adjustModalMaxHeightAndPosition();
+		});
+
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1 class="page-header">Bootstrap 3 Modal Vertically Centered</h1>
+	<p class="text-info">*Works with Bootstrap v3 - v3.3.4</p>
+	<p class="lead">Vertically center your modals without declaring a <code>height</code>.<br>Modal <code>max-height</code> does not exceed window height with scrollable <code>.modal-body</code> and adapts on resize.<br>
+	</p>
+
+	<!-- Button trigger modal -->
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+		Short modal
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+		Long modal
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+		No Footer
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+		No Header
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+		No Header &amp; Footer
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#myLargeModal">
+		Large Modal
+	</button>
+
+	<button class="btn btn-primary" data-toggle="modal" data-target="#mySmallModal">
+		Small Modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sed dolores iusto ab vero tempora in earum accusantium quas iure repellendus fugit ipsa reiciendis. Id illo natus sequi ex eveniet!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2Label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModal2Label">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sit ipsum quis magnam tenetur dignissimos quam molestiae explicabo hic veritatis nobis facilis ipsa saepe voluptas doloribus voluptates culpa nesciunt quidem?</p>
+					<p>Voluptatibus suscipit ipsum quisquam architecto provident iusto eaque nemo nulla minima voluptas molestiae aliquam! Laborum est repellat aliquid esse optio cupiditate sunt vitae maiores voluptate incidunt aut quaerat rem. Sequi.</p>
+					<p>Tenetur atque aliquam quibusdam sapiente modi totam magnam blanditiis repudiandae quia illo eum cupiditate nihil dolore at veritatis culpa corporis! Aliquid error magnam tempore itaque non mollitia nemo ipsa exercitationem.</p>
+					<p>Labore assumenda expedita saepe doloremque animi optio maxime repudiandae incidunt. Obcaecati voluptates eveniet fuga harum facere dicta quidem vero aliquid totam natus doloremque quibusdam nesciunt iusto magnam expedita itaque ut?</p>
+					<p>Consectetur ex quae nisi alias doloribus autem cupiditate nobis dolore sit esse voluptates architecto dignissimos quis earum deserunt aliquid itaque nesciunt tempora porro error! Harum dicta minima quae molestias atque?</p>
+					<p>Fugiat velit quaerat sed pariatur quo debitis aut enim ipsam consequuntur itaque officiis omnis dolore ut reprehenderit rem quisquam aliquam amet eius tempora ratione est praesentium magni laudantium nulla quod.</p>
+					<p>Aperiam vel cupiditate enim ratione architecto facilis molestias minus neque sint fugiat reiciendis necessitatibus minima sit voluptas molestiae reprehenderit ullam sequi ut quae in. Et tempora quod vero illo praesentium.</p>
+					<p>Tempora sequi nihil cum esse nemo voluptatum iure impedit molestias tempore sapiente amet nulla eos architecto dolor enim expedita quidem. Reprehenderit earum aperiam voluptatem magnam suscipit cum consequatur dicta rem.</p>
+					<p>Facilis aperiam similique assumenda ab aut quo cupiditate corporis dolorum recusandae impedit tenetur doloremque id nesciunt sequi molestiae nostrum alias quibusdam ipsam enim numquam exercitationem tempora culpa ex ullam autem!</p>
+					<p>Dolores soluta quia voluptas rerum ducimus et reiciendis nulla aut blanditiis dolore vero deleniti impedit itaque aliquid consequuntur dolorem id officiis assumenda quam aspernatur! Optio consequatur deserunt magni nulla nam.</p>
+					<p>Iste ea doloremque omnis sunt quia voluptatum eum dolore. Nihil doloremque tempore culpa molestiae accusamus non quas eius sit commodi sequi earum rem magni dolorum nostrum possimus porro dolor excepturi.</p>
+					<p>Reprehenderit tenetur blanditiis esse ratione molestiae tempore laborum facilis atque expedita doloremque quidem facere fugit similique excepturi vitae dolorum officiis laudantium distinctio veniam a recusandae consectetur deserunt quo! Perspiciatis deleniti.</p>
+					<p>Nostrum sunt ea deleniti quod quos autem amet unde exercitationem ipsa commodi. Corporis aut possimus eaque omnis et voluptatibus dolores numquam ullam temporibus voluptas aliquid veniam rem harum pariatur perspiciatis.</p>
+					<p>Rem ducimus aliquid dolore reprehenderit reiciendis praesentium consectetur nemo nesciunt molestiae corporis quos sed in vero numquam molestias nostrum veritatis ex consequatur blanditiis quibusdam officiis illo ab unde rerum impedit!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal3Label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModal3Label">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sed dolores iusto ab vero tempora in earum accusantium quas iure repellendus fugit ipsa reiciendis. Id illo natus sequi ex eveniet!</p>
+					<p>Animi temporibus voluptatibus minus ad laboriosam dignissimos eum incidunt blanditiis nobis magnam itaque nostrum veritatis eius laudantium voluptatem aspernatur accusamus maiores at vitae esse cumque. Est debitis nemo porro quam.</p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal4Label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sed dolores iusto ab vero tempora in earum accusantium quas iure repellendus fugit ipsa reiciendis. Id illo natus sequi ex eveniet!</p>
+					<p>Animi temporibus voluptatibus minus ad laboriosam dignissimos eum incidunt blanditiis nobis magnam itaque nostrum veritatis eius laudantium voluptatem aspernatur accusamus maiores at vitae esse cumque. Est debitis nemo porro quam.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModal5Label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo pariatur facilis molestiae recusandae vel facere et magnam praesentium veniam numquam eius distinctio dicta nostrum voluptatum doloribus. Optio quidem voluptatum quaerat.</p>
+					<p>Tempore quas omnis a suscipit doloremque voluptatibus sit non aliquid at accusamus quam vero culpa quisquam aut placeat vel odit. Pariatur architecto placeat nesciunt eveniet dolore eius voluptatibus ab fuga.</p>
+					<p>Necessitatibus deleniti incidunt rerum quia magni quidem cum sequi veritatis nostrum aliquam sapiente blanditiis laudantium nobis atque ab ipsum temporibus qui! Nihil eligendi fuga aliquam ullam voluptates pariatur ducimus delectus.</p>
+					<p>Fuga unde illum nisi suscipit esse eveniet quasi eligendi ipsam quia enim voluptates quis architecto omnis cum fugit ab sed culpa pariatur nulla minima voluptate dolorum incidunt accusantium officiis totam.</p>
+					<p>Nostrum optio sed quam vitae ducimus at aut reprehenderit amet voluptatum dolor doloribus temporibus perferendis veniam magnam illum nulla natus quibusdam repellat. Id aut aperiam qui iste quasi. Sed dolor.</p>
+					<p>Ratione ad aliquid mollitia ipsam dignissimos aperiam ullam odit earum enim odio adipisci qui non dicta culpa hic facere explicabo. Obcaecati doloribus eligendi voluptatibus placeat voluptas labore quisquam esse sunt.</p>
+					<p>Mollitia minima nesciunt maiores laboriosam voluptas at quidem necessitatibus repellat vel ullam. Ex ut qui mollitia pariatur illum iste hic rem provident quo ab maiores officiis harum repudiandae doloribus ipsa!</p>
+					<p>Alias tenetur repudiandae voluptatibus magni eligendi assumenda veritatis suscipit earum ea. Ipsam quibusdam accusantium beatae corrupti quisquam aut quae tempore autem ut dolorem voluptatibus sunt saepe dolor laborum voluptates eum.</p>
+					<p>Est sapiente earum animi facilis harum voluptatem non nobis ullam aliquam voluptate. Ipsum debitis doloremque harum molestiae non laborum dolorum illo facilis itaque quia excepturi quas sit nulla labore modi.</p>
+					<p>Eveniet dolorem facilis cumque beatae pariatur explicabo iste enim consequuntur sunt omnis possimus itaque dolor! Ex quas eveniet inventore quisquam sed fugit sequi obcaecati dolore optio libero perferendis natus aliquid.</p>
+					<p>Ipsum nihil a maxime in esse id nesciunt sapiente praesentium officiis sunt ea sed velit fuga sit cupiditate officia provident porro molestiae. Ut quae odio perspiciatis perferendis ipsam dignissimos quos.</p>
+					<p>Ad perferendis tempore incidunt dolorem assumenda quod nesciunt nobis expedita nemo alias dicta porro quasi adipisci culpa dolores nihil eveniet libero veritatis cum eligendi id unde animi similique natus tempora.</p>
+					<p>Amet a officia quae voluptate quisquam aliquam iste labore velit nemo quibusdam nostrum repellat alias vitae iusto in quaerat deleniti! Eligendi repellendus sed quod quisquam minima mollitia corporis dolores reprehenderit!</p>
+					<p>Dolorem iste blanditiis error hic nemo consequatur amet pariatur quidem in facere adipisci id deleniti provident natus eveniet dicta quo officia nisi ullam dolorum libero quaerat ratione soluta saepe est!</p>
+					<p>Necessitatibus porro eligendi numquam optio omnis eius magni laudantium expedita ex reprehenderit tempore perspiciatis perferendis natus voluptatibus veritatis. Voluptate molestiae nisi modi saepe tenetur tempora nulla dolores recusandae atque itaque.</p>
+					<p>Perspiciatis rerum dolore alias unde laborum veniam quam facere laudantium voluptas vero voluptatibus inventore esse aut dignissimos nemo adipisci repudiandae suscipit aspernatur minus laboriosam tenetur pariatur sed. Ratione aperiam provident.</p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myLargeModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myLargeModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo pariatur facilis molestiae recusandae vel facere et magnam praesentium veniam numquam eius distinctio dicta nostrum voluptatum doloribus. Optio quidem voluptatum quaerat.</p>
+					<p>Tempore quas omnis a suscipit doloremque voluptatibus sit non aliquid at accusamus quam vero culpa quisquam aut placeat vel odit. Pariatur architecto placeat nesciunt eveniet dolore eius voluptatibus ab fuga.</p>
+					<p>Necessitatibus deleniti incidunt rerum quia magni quidem cum sequi veritatis nostrum aliquam sapiente blanditiis laudantium nobis atque ab ipsum temporibus qui! Nihil eligendi fuga aliquam ullam voluptates pariatur ducimus delectus.</p>
+					<p>Fuga unde illum nisi suscipit esse eveniet quasi eligendi ipsam quia enim voluptates quis architecto omnis cum fugit ab sed culpa pariatur nulla minima voluptate dolorum incidunt accusantium officiis totam.</p>
+					<p>Nostrum optio sed quam vitae ducimus at aut reprehenderit amet voluptatum dolor doloribus temporibus perferendis veniam magnam illum nulla natus quibusdam repellat. Id aut aperiam qui iste quasi. Sed dolor.</p>
+					<p>Ratione ad aliquid mollitia ipsam dignissimos aperiam ullam odit earum enim odio adipisci qui non dicta culpa hic facere explicabo. Obcaecati doloribus eligendi voluptatibus placeat voluptas labore quisquam esse sunt.</p>
+					<p>Mollitia minima nesciunt maiores laboriosam voluptas at quidem necessitatibus repellat vel ullam. Ex ut qui mollitia pariatur illum iste hic rem provident quo ab maiores officiis harum repudiandae doloribus ipsa!</p>
+					<p>Alias tenetur repudiandae voluptatibus magni eligendi assumenda veritatis suscipit earum ea. Ipsam quibusdam accusantium beatae corrupti quisquam aut quae tempore autem ut dolorem voluptatibus sunt saepe dolor laborum voluptates eum.</p>
+					<p>Est sapiente earum animi facilis harum voluptatem non nobis ullam aliquam voluptate. Ipsum debitis doloremque harum molestiae non laborum dolorum illo facilis itaque quia excepturi quas sit nulla labore modi.</p>
+					<p>Eveniet dolorem facilis cumque beatae pariatur explicabo iste enim consequuntur sunt omnis possimus itaque dolor! Ex quas eveniet inventore quisquam sed fugit sequi obcaecati dolore optio libero perferendis natus aliquid.</p>
+					<p>Ipsum nihil a maxime in esse id nesciunt sapiente praesentium officiis sunt ea sed velit fuga sit cupiditate officia provident porro molestiae. Ut quae odio perspiciatis perferendis ipsam dignissimos quos.</p>
+					<p>Ad perferendis tempore incidunt dolorem assumenda quod nesciunt nobis expedita nemo alias dicta porro quasi adipisci culpa dolores nihil eveniet libero veritatis cum eligendi id unde animi similique natus tempora.</p>
+					<p>Amet a officia quae voluptate quisquam aliquam iste labore velit nemo quibusdam nostrum repellat alias vitae iusto in quaerat deleniti! Eligendi repellendus sed quod quisquam minima mollitia corporis dolores reprehenderit!</p>
+					<p>Dolorem iste blanditiis error hic nemo consequatur amet pariatur quidem in facere adipisci id deleniti provident natus eveniet dicta quo officia nisi ullam dolorum libero quaerat ratione soluta saepe est!</p>
+					<p>Necessitatibus porro eligendi numquam optio omnis eius magni laudantium expedita ex reprehenderit tempore perspiciatis perferendis natus voluptatibus veritatis. Voluptate molestiae nisi modi saepe tenetur tempora nulla dolores recusandae atque itaque.</p>
+					<p>Perspiciatis rerum dolore alias unde laborum veniam quam facere laudantium voluptas vero voluptatibus inventore esse aut dignissimos nemo adipisci repudiandae suscipit aspernatur minus laboriosam tenetur pariatur sed. Ratione aperiam provident.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="mySmallModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="mySmallModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo pariatur facilis molestiae recusandae vel facere et magnam praesentium veniam numquam eius distinctio dicta nostrum voluptatum doloribus. Optio quidem voluptatum quaerat.</p>
+					<p>Tempore quas omnis a suscipit doloremque voluptatibus sit non aliquid at accusamus quam vero culpa quisquam aut placeat vel odit. Pariatur architecto placeat nesciunt eveniet dolore eius voluptatibus ab fuga.</p>
+					<p>Necessitatibus deleniti incidunt rerum quia magni quidem cum sequi veritatis nostrum aliquam sapiente blanditiis laudantium nobis atque ab ipsum temporibus qui! Nihil eligendi fuga aliquam ullam voluptates pariatur ducimus delectus.</p>
+					<p>Fuga unde illum nisi suscipit esse eveniet quasi eligendi ipsam quia enim voluptates quis architecto omnis cum fugit ab sed culpa pariatur nulla minima voluptate dolorum incidunt accusantium officiis totam.</p>
+					<p>Nostrum optio sed quam vitae ducimus at aut reprehenderit amet voluptatum dolor doloribus temporibus perferendis veniam magnam illum nulla natus quibusdam repellat. Id aut aperiam qui iste quasi. Sed dolor.</p>
+					<p>Ratione ad aliquid mollitia ipsam dignissimos aperiam ullam odit earum enim odio adipisci qui non dicta culpa hic facere explicabo. Obcaecati doloribus eligendi voluptatibus placeat voluptas labore quisquam esse sunt.</p>
+					<p>Mollitia minima nesciunt maiores laboriosam voluptas at quidem necessitatibus repellat vel ullam. Ex ut qui mollitia pariatur illum iste hic rem provident quo ab maiores officiis harum repudiandae doloribus ipsa!</p>
+					<p>Alias tenetur repudiandae voluptatibus magni eligendi assumenda veritatis suscipit earum ea. Ipsam quibusdam accusantium beatae corrupti quisquam aut quae tempore autem ut dolorem voluptatibus sunt saepe dolor laborum voluptates eum.</p>
+					<p>Est sapiente earum animi facilis harum voluptatem non nobis ullam aliquam voluptate. Ipsum debitis doloremque harum molestiae non laborum dolorum illo facilis itaque quia excepturi quas sit nulla labore modi.</p>
+					<p>Eveniet dolorem facilis cumque beatae pariatur explicabo iste enim consequuntur sunt omnis possimus itaque dolor! Ex quas eveniet inventore quisquam sed fugit sequi obcaecati dolore optio libero perferendis natus aliquid.</p>
+					<p>Ipsum nihil a maxime in esse id nesciunt sapiente praesentium officiis sunt ea sed velit fuga sit cupiditate officia provident porro molestiae. Ut quae odio perspiciatis perferendis ipsam dignissimos quos.</p>
+					<p>Ad perferendis tempore incidunt dolorem assumenda quod nesciunt nobis expedita nemo alias dicta porro quasi adipisci culpa dolores nihil eveniet libero veritatis cum eligendi id unde animi similique natus tempora.</p>
+					<p>Amet a officia quae voluptate quisquam aliquam iste labore velit nemo quibusdam nostrum repellat alias vitae iusto in quaerat deleniti! Eligendi repellendus sed quod quisquam minima mollitia corporis dolores reprehenderit!</p>
+					<p>Dolorem iste blanditiis error hic nemo consequatur amet pariatur quidem in facere adipisci id deleniti provident natus eveniet dicta quo officia nisi ullam dolorum libero quaerat ratione soluta saepe est!</p>
+					<p>Necessitatibus porro eligendi numquam optio omnis eius magni laudantium expedita ex reprehenderit tempore perspiciatis perferendis natus voluptatibus veritatis. Voluptate molestiae nisi modi saepe tenetur tempora nulla dolores recusandae atque itaque.</p>
+					<p>Perspiciatis rerum dolore alias unde laborum veniam quam facere laudantium voluptas vero voluptatibus inventore esse aut dignissimos nemo adipisci repudiandae suscipit aspernatur minus laboriosam tenetur pariatur sed. Ratione aperiam provident.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+</div>
+</body>
+</html>
